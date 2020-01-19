@@ -13,8 +13,17 @@ Rules set was originaly developed as a module in https://github.com/StepicOrg/st
 [ ![bintray](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.ktlint/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.ktlint)
 
 Add following repository to access binaries 
-```groovy=
+```groovy
 allprojects {
     repositories {
         maven { url "https://dl.bintray.com/eadm/ru.nobird.android" }
+    }
+}
+```
+
+Dependency
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.ktlint:rules:1.0'
+}
 ```
