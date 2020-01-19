@@ -1,6 +1,6 @@
 ext.versions = [
         code                 : 1,
-        name                 : '1.0',
+        name                 : '1.0.0',
 
         minSdk               : 16,
         targetSdk            : 28,
@@ -18,8 +18,7 @@ ext.versions = [
 
         junit                : '4.12',
 
-        ktlint               : '0.34.2',
-        ktlintRules          : '1.0'
+        ktlint               : '0.34.2'
 ]
 
 ext.gradlePlugins = [
@@ -40,5 +39,5 @@ ext.libraries = [
         junit                : "junit:junit:$versions.junit",
 
         ktlint               : "com.pinterest:ktlint:$versions.ktlint",
-        ktlintRules          : "ru.nobird.android.ktlint:rules:$versions.ktlintRules"
+        ktlintRules          : "ru.nobird.android.ktlint:rules:$versions.name"
 ]
