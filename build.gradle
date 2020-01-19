@@ -10,7 +10,9 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath gradlePlugins.androidGradlePlugin
+        classpath gradlePlugins.android
+        classpath gradlePlugins.androidMaven
+        classpath gradlePlugins.bintray
         classpath gradlePlugins.kotlin
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

@@ -1,5 +1,8 @@
 apply plugin: 'kotlin'
 
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
 dependencies {
     implementation libraries.ktlint
 
@@ -11,3 +14,29 @@ compileKotlin {
         jvmTarget = "1.8"
     }
 }
+
+ext {
+    bintrayRepo = 'ru.nobird.android'
+    bintrayName = 'ru.nobird.android.ktlint'
+
+    publishedGroupId = 'ru.nobird.android.ktlint'
+    libraryName = 'ktlint-rules'
+    artifact = 'rules'
+
+    libraryDescription = 'Collection of common ktlint rules'
+
+    siteUrl = 'https://github.com/eadm/ktlint-rules'
+    gitUrl = 'https://github.com/eadm/ktlint-rules'
+
+    libraryVersion = versions.name
+
+    developerId = 'eadm'
+    developerName = 'Ruslan Davletshin'
+    developerEmail = 'smartmorefeed@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: "../bintray.gradle"
