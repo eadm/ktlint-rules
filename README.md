@@ -30,3 +30,19 @@ dependencies {
 
 And then follow instructions from https://github.com/pinterest/ktlint
 
+## Building & testing library
+
+To run rules tests can be used following task
+```sh
+./gradlew ktlint-rules:test
+```
+
+To see ktlint in action for sample app
+```sh
+./gradlew app:ktlint
+```
+
+And to autocorrect
+```sh
+./gradlew app:ktlintFormat
+```
