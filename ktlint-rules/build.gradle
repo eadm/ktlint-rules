@@ -15,6 +15,14 @@ compileKotlin {
     }
 }
 
+sourceSets {
+    test {
+        java {
+            srcDirs = ["src/test/java"]
+        }
+    }
+}
+
 ext {
     bintrayRepo = 'ru.nobird.android'
     bintrayName = 'ru.nobird.android.ktlint'
