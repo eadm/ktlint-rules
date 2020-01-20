@@ -24,7 +24,7 @@ allprojects {
 Dependency
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.ktlint:rules:1.0'
+    implementation 'ru.nobird.android.ktlint:rules:1.0.0'
 }
 ```
 
