@@ -30,6 +30,8 @@ dependencies {
 
 And then follow instructions from https://github.com/pinterest/ktlint
 
+[Example of `ktlint` task realisation](https://github.com/eadm/ktlint-rules/blob/master/ktlint.gradle)
+
 ## Building & testing library
 
 To run rules tests can be used following task
