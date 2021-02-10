@@ -199,4 +199,31 @@ class IfElseRuleTest {
             rule
         )
     }
+
+    @Test
+    fun `incorrect if statement 4`() {
+        assertFormat(
+            """
+                private fun hello() {
+                    val x = if (a > 13) { 
+                            val q = 1
+                            q
+                        } else 
+                            500
+                }
+            """,
+            """
+                private fun hello() {
+                    val x = 
+                        if (a > 13) {
+                            val q = 1
+                            q
+                        } else {
+                            500
+                        }
+                }
+            """,
+            rule
+        )
+    }
 }
