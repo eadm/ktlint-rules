@@ -9,6 +9,7 @@ class NobirdRuleSetProvider : RuleSetProvider {
             "nobird-ktlint-rules",
             ExpressionBodyRule(),
             ExpressionBodyIndentRule(),
-            ExplicitPublicTypeRule()
+            ExplicitPublicTypeRule(),
+            IfElseRule()
         )
 }
