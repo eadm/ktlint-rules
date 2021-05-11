@@ -8,11 +8,10 @@ buildscript {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
+        mavenLocal()
     }
     dependencies {
         classpath gradlePlugins.android
-        classpath gradlePlugins.androidMaven
-        classpath gradlePlugins.bintray
         classpath gradlePlugins.kotlin
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,7 +23,7 @@ allprojects {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
-        maven { url "https://dl.bintray.com/eadm/ru.nobird.android" }
+        mavenLocal()
     }
 }
 

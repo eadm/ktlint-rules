@@ -1,7 +1,5 @@
 apply plugin: 'kotlin'
-
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 dependencies {
     implementation libraries.ktlint
@@ -23,28 +21,27 @@ sourceSets {
     }
 }
 
-ext {
-    bintrayRepo = 'ru.nobird.android'
-    bintrayName = 'ru.nobird.android.ktlint'
+group 'ru.nobird.android.ktlint'
+version versions.name
 
-    publishedGroupId = 'ru.nobird.android.ktlint'
-    libraryName = 'ktlint-rules'
-    artifact = 'rules'
+publishing {
+    repositories {
+        maven {
+            name = "GitHub"
+            url = uri('https://maven.pkg.github.com/eadm/ktlint-rules')
+            credentials {
+                username = System.getenv("GITHUB_USER") ?: project.properties["GITHUB_USER"]
+                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN") ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"]
+            }
+        }
+    }
 
-    libraryDescription = 'Collection of common ktlint rules'
-
-    siteUrl = 'https://github.com/eadm/ktlint-rules'
-    gitUrl = 'https://github.com/eadm/ktlint-rules'
-
-    libraryVersion = versions.name
-
-    developerId = 'eadm'
-    developerName = 'Ruslan Davletshin'
-    developerEmail = 'smartmorefeed@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    publications {
+        ktlintRules(MavenPublication) {
+            groupId 'ru.nobird.android.ktlint'
+            artifactId 'rules'
+            version versions.name
+            artifact("$buildDir/libs/ktlint-rules-${versions.name}.jar")
+        }
+    }
 }
-
-apply from: "../bintray.gradle"

@@ -10,13 +10,13 @@ Rules set was originaly developed as a module in https://github.com/StepicOrg/st
 - `expression-body-indent` *(with autocorrection)* &mdash; tracks indent of expression body
 
 ## Installation 
-[ ![bintray](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.ktlint/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.ktlint)
+[ ![Github Packages](https://img.shields.io/badge/version-1.0.0-blue) ](https://github.com/eadm?tab=packages&repo_name=ktlint-rules)
 
 Add following repository to access binaries 
 ```groovy
 allprojects {
     repositories {
-        maven { url "https://dl.bintray.com/eadm/ru.nobird.android" }
+        maven { url "https://maven.pkg.github.com/eadm/ktlint-rules" }
     }
 }
 ```
