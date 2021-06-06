@@ -16,7 +16,13 @@ Add following repository to access binaries
 ```groovy
 allprojects {
     repositories {
-        maven { url "https://maven.pkg.github.com/eadm/ktlint-rules" }
+        maven { 
+            url = "https://maven.pkg.github.com/eadm/ktlint-rules" 
+            credentials {
+                username = System.getenv("GITHUB_USER") ?: project.properties["GITHUB_USER"]
+                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN") ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"]
+            }
+        }
     }
 }
 ```
